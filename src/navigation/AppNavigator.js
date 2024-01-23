@@ -3,8 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import ImageUploadScreen from '../screens/ImageUploadScreen';
 import HistoricalScreen from '../screens/HistoricalScreen';
-import AlzheimerListScreen from '../screens/PlantListScreen';
-import AlzheimerDetailScreen from '../screens/PlantDetailScreen';
+import AlzheimerListScreen from '../screens/AlzheimerListScreen';
+import AlzheimerDetailScreen from '../screens/AlzheimerDetailScreen';
 import UserManualScreen from '../screens/UserManualScreen';
 import CameraScreen from '../screens/CameraScreen';
 
