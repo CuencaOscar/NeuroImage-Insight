@@ -19,9 +19,9 @@ const HomeScreen = () => {
             },
         },
         {
-            title: homeScreenTexts.plantListButton,
+            title: homeScreenTexts.alzheimerListButton,
             onPress: () => {
-                navigation.navigate('PlantList');
+                navigation.navigate('AlzheimerList');
             },
         },
         {

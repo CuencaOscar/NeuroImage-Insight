@@ -2,7 +2,7 @@ export const homeScreenTexts = {
     title: "NeuroImage Insight",
     captureUploadButton: "Capture or Upload",
     userManualButton: "User Manual",
-    plantListButton: "Alzheimer List",
+    alzheimerListButton: "Alzheimer List",
 };
 
 export const imageUploadScreenTexts = {
