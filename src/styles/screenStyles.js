@@ -36,7 +36,7 @@ export const homeScreenStyles = StyleSheet.create({
     },
     buttonText: {
         color: 'white',
-        fontSize: Platform.OS === 'android' ? 14 : 16,
+        fontSize: Platform.OS === 'android' ? 14 : 20,
         textAlign: 'center',
     },
 });

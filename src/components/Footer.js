@@ -11,7 +11,7 @@ const Footer = () => {
     return (
         <View style={styles.container}>
             <View style={styles.iconContainer}>
-                <TouchableOpacity onPress={() => {openURL("https://www.instagram.com/xxoscarcuencaxx/")}}>
+                <TouchableOpacity onPress={() => {openURL("https://www.instagram.com/oscarcuenca__/")}}>
                     <FontAwesome name="instagram" size={30} color="#FFF" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {openURL("https://github.com/CuencaOscar")}}>
