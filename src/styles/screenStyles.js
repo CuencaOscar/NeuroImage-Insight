@@ -8,11 +8,7 @@ export const homeScreenStyles = StyleSheet.create({
     },
     backgroundImage: {
         width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height * 0.7,
         resizeMode: 'cover',
-        position: 'absolute',
-        left: -5,
-        bottom: 80,
         shadowColor: 'black',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
@@ -32,7 +28,7 @@ export const homeScreenStyles = StyleSheet.create({
         bottom: 30,
     },
     button: {
-        backgroundColor: '#4caf50',
+        backgroundColor: '#5E7CE2',
         padding: 10,
         borderRadius: 10,
         paddingHorizontal: 20,

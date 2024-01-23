@@ -34,9 +34,9 @@ const styles = StyleSheet.create({
     },
     iconContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        width: '60%',
+        width: '50%',
         marginBottom: 10,
     },
     text: {

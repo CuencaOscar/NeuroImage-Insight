@@ -33,7 +33,7 @@ const HomeScreen = () => {
     ];
     return (
         <LinearGradient
-            colors={['#2e7d32', '#388e3c', '#43a047']}
+            colors={['#5E7CE2', '#A0D2DB', '#87CEEB']}
             style={homeScreenStyles.container}
         >
             <Text style={homeScreenStyles.title}>{homeScreenTexts.title}</Text>
@@ -41,7 +41,7 @@ const HomeScreen = () => {
                 source={require('../../assets/images/portada.png')}
                 style={homeScreenStyles.backgroundImage}
             />
-            <View style={{flex:1, justifyContent: 'flex-end'}}>
+            <View style={{flex:1, justifyContent: 'center'}}>
                 <ButtonList buttons={buttonData} />
             </View>
             <Footer />
