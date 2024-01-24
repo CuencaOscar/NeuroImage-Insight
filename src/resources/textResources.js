@@ -1,13 +1,13 @@
 export const homeScreenTexts = {
     title: "NeuroImage Insight",
-    captureUploadButton: "Capture or Upload",
+    captureUploadButton: "Upload",
     userManualButton: "User Manual",
     alzheimerListButton: "Alzheimer List",
 };
 
 export const imageUploadScreenTexts = {
-    title: "Leaf Health Check",
-    takePhotoButton: "Take Foto",
+    title: "NeuroImage Check",
+    takePhotoButton: "Load Foto",
     homeButton: "Home",
     historicalButton: "Historical"
 };
