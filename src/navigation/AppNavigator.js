@@ -17,8 +17,8 @@ const AppNavigator = () => {
                     headerShown: false
                 }}>
                 <Stack.Screen name="Home" component={HomeScreen} />
-                {/* <Stack.Screen name="ImageUpload" component={ImageUploadScreen} />
-                <Stack.Screen name="Historical" component={HistoricalScreen} />
+                <Stack.Screen name="ImageUpload" component={ImageUploadScreen} />
+                {/* <Stack.Screen name="Historical" component={HistoricalScreen} />
                 <Stack.Screen name="AlzheimerList" component={AlzheimerListScreen} />
                 <Stack.Screen name="AlzheimerDetail" component={AlzheimerDetailScreen} />
                 <Stack.Screen name="UserManual" component={UserManualScreen} />
