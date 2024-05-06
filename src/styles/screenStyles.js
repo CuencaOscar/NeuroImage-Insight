@@ -161,3 +161,118 @@ export const imageUploadScreenStyles = StyleSheet.create({
         left: '25%',
     },
 });
+
+export const historicalScreenStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    appbar: {
+        backgroundColor: 'transparent',
+        elevation: 0,
+    },
+    title_header: {
+        textAlign: 'center',
+        color: 'white',
+        fontSize: Platform.OS === 'android' ? 20 : 24,
+        fontWeight: 'bold'
+    },
+});
+
+export const historicalCardComponentStyles = StyleSheet.create({
+    card: {
+        borderRadius: 20,
+        overflow: 'hidden',
+        marginVertical: 10,
+        marginHorizontal: 16,
+        elevation: 5,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 10,
+    },
+    gradient: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 15,
+    },
+    image: {
+        width: 120,
+        height: 120,
+        borderRadius: 60,
+        borderWidth: 3,
+        borderColor: '#fff',
+    },
+    infoContainer: {
+        flex: 1,
+        marginLeft: 15,
+    },
+    name: {
+        fontSize: 12,
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    description: {
+        fontSize: 14,
+        color: '#666',
+        marginTop: 5,
+    },
+});
+
+export const historicalCardSkeletonComponentStyles = StyleSheet.create({
+    card: {
+        borderRadius: 20,
+        overflow: 'hidden',
+        marginVertical: 10,
+        marginHorizontal: 16,
+        elevation: 5,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 10,
+    },
+    gradient: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 15,
+    },
+    imageSkeleton: {
+        width: 120,
+        height: 120,
+        borderRadius: 60,
+        backgroundColor: '#e1e1e1',
+    },
+    infoContainer: {
+        flex: 1,
+        marginLeft: 15,
+        justifyContent: 'center',
+    },
+    nameSkeleton: {
+        width: '70%',
+        height: 18,
+        backgroundColor: '#e1e1e1',
+        borderRadius: 4,
+    },
+    descriptionSkeleton: {
+        width: '90%',
+        height: 14,
+        backgroundColor: '#e1e1e1',
+        borderRadius: 4,
+        marginTop: 10,
+    },
+});
+
+export const historicalListScreenStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    appbar: {
+        backgroundColor: 'transparent',
+        elevation: 0,
+    },
+    title_header: {
+        textAlign: 'center',
+        color: 'white',
+        fontSize: Platform.OS === 'android' ? 20 : 24,
+        fontWeight: 'bold'
+    },
+});
