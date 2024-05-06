@@ -29,10 +29,6 @@ const CameraScreen = () => {
     const [visible, setVisible] = useState(true);
     const [visiblePicture, setVisiblePicture] = useState(true);
 
-    if (hasCameraPermission === false) {
-        return <Text>No access to camera</Text>;
-    }
-
     useEffect(() => {
         (async () => {
             MediaLibrary.requestPermissionsAsync();
@@ -44,6 +40,11 @@ const CameraScreen = () => {
             }
         })();
     }, []);
+    
+    if (hasCameraPermission === false) {
+        return <Text>No access to camera</Text>;
+    }
+
 
     const pickImage = async () => {
         try {
