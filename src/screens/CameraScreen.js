@@ -11,6 +11,7 @@ import uuid from "react-native-uuid";
 import { env } from "../env/env";
 import { db, db_storage } from "../firebaseConfig";
 import { LinearGradient } from "expo-linear-gradient";
+import { cameraScreenStyles } from '../styles/screenStyles';
 
 const CameraScreen = () => {
 
@@ -27,6 +28,10 @@ const CameraScreen = () => {
     const [uri, setUri] = useState(null);
     const [visible, setVisible] = useState(true);
     const [visiblePicture, setVisiblePicture] = useState(true);
+
+    if (hasCameraPermission === false) {
+        return <Text>No access to camera</Text>;
+    }
 
     useEffect(() => {
         (async () => {
@@ -107,20 +112,16 @@ const CameraScreen = () => {
             });
     };
 
-    if (hasCameraPermission === false) {
-        return <Text>No access to camera</Text>;
-    }
-
     return (
         <LinearGradient
             colors={['#5E7CE2', '#A0D2DB', '#87CEEB']}
-            style={!image ? styles.container_first : styles.container}>
+            style={!image ? cameraScreenStyles.container_first : cameraScreenStyles.container}>
             {!image ? (
-                <Image style={styles.camera} source={require('../../assets/images/load_image.png')} />
+                <Image style={cameraScreenStyles.camera} source={require('../../assets/images/load_image.png')} />
             ) : (
-                <Image style={styles.camera} source={{ uri: image }} />
+                <Image style={cameraScreenStyles.camera} source={{ uri: image }} />
             )}
-            <View style={styles.buttonContainer}>
+            <View style={cameraScreenStyles.buttonContainer}>
                 {image ? (
                     <>
                         <Button
@@ -169,11 +170,11 @@ const CameraScreen = () => {
             </View>
             {isTrainning && (
                 <View
-                    style={styles.loading_indicator}
+                    style={cameraScreenStyles.loading_indicator}
                 >
                     <ActivityIndicator size="large" color="#7bc4db" />
-                    <View style={styles.container_message_style}>
-                        <Text style={styles.message_style}>Preparing Classification</Text>
+                    <View style={cameraScreenStyles.container_message_style}>
+                        <Text style={cameraScreenStyles.message_style}>Preparing Classification</Text>
                     </View>
                 </View>
             )}
@@ -181,59 +182,5 @@ const CameraScreen = () => {
     );
 
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#000",
-    },
-    container_first: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: "#000",
-    },
-    container_message_style: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    message_style: {
-        fontWeight: "bold",
-        fontSize: 20,
-        color: "white",
-    },
-    camera: {
-        flex: 1,
-        alignItems: 'center',
-        resizeMode: "contain",
-    },
-    buttonContainer: {
-        position: "absolute",
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingHorizontal: 10,
-        paddingVertical: 15,
-        alignItems: 'center',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: 'transparent',
-        borderBottomWidth: 1,
-        borderBottomColor: 'rgba(0, 0, 0, 0.1)',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 3.84,
-    },
-    loading_indicator: {
-        position: 'absolute',
-        top: '50%',
-        left: '25%',
-    },
-});
 
 export default CameraScreen;
