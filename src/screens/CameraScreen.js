@@ -16,9 +16,6 @@ import { cameraScreenStyles } from '../styles/screenStyles';
 const CameraScreen = () => {
 
     const storageRef = ref(db_storage, uuid.v4());
-
-    const cameraRef = useRef(null);
-
     const navigation = useNavigation();
 
     const [hasCameraPermission, setHasCameraPermission] = useState();
@@ -92,11 +89,11 @@ const CameraScreen = () => {
                     xhr.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
                             const resultado = JSON.parse(this.responseText);
+                            const key = Object.keys(resultado)[0];
+                            const value = resultado[key];
                             addDoc(collection(db, "historical"), {
-                                image_path: path,
-                                type_one: resultado[0]['class'] + ': ' + resultado[0]['probability'] + '%',
-                                type_two: resultado[1]['class'] + ': ' + resultado[1]['probability'] + '%',
-                                type_three: resultado[2]['class'] + ': ' + resultado[2]['probability'] + '%',
+                                image_url: path,
+                                type_one: `${key}: ${value}`,
                                 createdAt: hoy.getTime(),
                             });
                             setIsTrainning(false);

@@ -5,16 +5,17 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const AlzheimerCard = ({ alzheimer }) => {
     const navigation = useNavigation();
+    console.log('La data que llega es: ', alzheimer)
     return (
         <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('AlzheimerDetail', alzheimer)}>
             <LinearGradient
                 colors={['#dde1e7', '#ffffff']}
                 style={styles.gradient}
             >
-                <Image source={{ uri: alzheimer.imageUrl }} style={styles.image} />
+                <Image source={{ uri: alzheimer.image_url }} style={styles.image} />
                 <View style={styles.infoContainer}>
                     <Text style={styles.name}>{alzheimer.name}</Text>
-                    <Text style={styles.description} numberOfLines={2}>{alzheimer.description}</Text>
+                    <Text style={styles.description} numberOfLines={2}>{alzheimer.definition_of_state}</Text>
                 </View>
             </LinearGradient>
         </TouchableOpacity>

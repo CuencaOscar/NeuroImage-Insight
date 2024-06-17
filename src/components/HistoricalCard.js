@@ -8,16 +8,14 @@ const HistoricalCard = ({ historical }) => {
         <View style={historicalCardComponentStyles.card}>
             <LinearGradient
                 colors={['#dde1e7', '#ffffff']}
-                style={styles.gradient}
+                style={historicalCardComponentStyles.gradient}
             >
-                <Image source={{ uri: historical.image_path }} style={styles.image} />
+                <Image source={{ uri: historical.image_url }} style={historicalCardComponentStyles.image} />
                 <View style={historicalCardComponentStyles.infoContainer}>
-                    <Text style={historicalCardComponentStyles.name}>{"Type One: "}</Text>
-                    <Text style={historicalCardComponentStyles.name}>{historical.type_one}</Text>
-                    <Text style={historicalCardComponentStyles.name}>{"Type Two: "}</Text>
-                    <Text style={historicalCardComponentStyles.name}>{historical.type_two}</Text>
-                    <Text style={historicalCardComponentStyles.name}>{"Type Three: "}</Text>
-                    <Text style={historicalCardComponentStyles.name}>{historical.type_three}</Text>
+                    <Text style={historicalCardComponentStyles.label}>{"Diagnosis: "}</Text>
+                    <Text style={historicalCardComponentStyles.value}>
+                        {historical.type_one.split(':')[0].trim()}
+                    </Text>
                 </View>
             </LinearGradient>
         </View>
