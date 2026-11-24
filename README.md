@@ -8,6 +8,8 @@ Flask API, and keeps a history of every analysis.
 Developed for my thesis *"Desarrollo de una aplicación móvil para clasificación de imágenes de Alzheimer mediante
 aprendizaje automático"* at Universidad Técnica de Machala (UTMACH).
 
+![CI](https://github.com/CuencaOscar/NeuroImage-Insight/actions/workflows/ci.yml/badge.svg)
+
 > **Research project, not a medical device.** Results must not be used for diagnosis.
 
 ![NeuroImage Insight screens](docs/screenshots.png)
