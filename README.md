@@ -24,10 +24,13 @@ aprendizaje automático"* at Universidad Técnica de Machala (UTMACH).
 
 ## Architecture
 
-```
-Expo app ──► Firebase Storage (image) ──► NeuroEngine /api ──► CNN (Keras)
-    │                                          │
-    └────────── Cloud Firestore (history) ◄────┘
+```mermaid
+flowchart LR
+    app["📱 Expo app"] -- "image" --> storage[("Firebase Storage")]
+    storage --> api["⚙️ NeuroEngine API<br/>/api"]
+    api --> model["🧠 CNN<br/>Keras"]
+    api -- "result" --> history[("Cloud Firestore<br/>history")]
+    history --> app
 ```
 
 ## Tech stack
