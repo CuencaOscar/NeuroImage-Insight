@@ -8,7 +8,7 @@ import * as ImagePicker from 'expo-image-picker';
 import * as MediaLibrary from "expo-media-library";
 import { Button } from "../components/Button";
 import uuid from "react-native-uuid";
-import { env } from "../env/env";
+import { apiUrl, storageBaseUrl } from "../config";
 import { db, db_storage } from "../firebaseConfig";
 import { LinearGradient } from "expo-linear-gradient";
 import { cameraScreenStyles } from '../styles/screenStyles';
@@ -81,11 +81,11 @@ const CameraScreen = () => {
             .then((resolve) => {
                 uploadBytes(storageRef, resolve).then((snapshot) => {
                     const path =
-                        env.firebase_env + snapshot.metadata.fullPath + "?alt=media";
+                        storageBaseUrl + snapshot.metadata.fullPath + "?alt=media";
                     let formData = new FormData();
                     formData.append("image", path);
                     let xhr = new XMLHttpRequest();
-                    xhr.open("POST", env.ngrok);
+                    xhr.open("POST", apiUrl);
                     xhr.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
                             const resultado = JSON.parse(this.responseText);
